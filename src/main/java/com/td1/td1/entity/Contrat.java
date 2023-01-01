@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,4 +29,7 @@ public class Contrat {
     private Specialite specialite;
     private Boolean archive;
     private Integer montantContrat;
+
+    @ManyToOne
+    private Etudiant etudiant;
 }
