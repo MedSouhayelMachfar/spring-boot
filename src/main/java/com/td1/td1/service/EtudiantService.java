@@ -7,9 +7,9 @@ import com.td1.td1.entity.Etudiant;
 public interface EtudiantService {
     List<Etudiant> retrieveAllEtudiants();
 
-    Etudiant addEtudiant (Etudiant e);
+    Etudiant addEtudiant(Etudiant e);
 
-    Etudiant updateEtudiant (Long idEtudiant, Etudiant e);
+    Etudiant updateEtudiant(Long idEtudiant, Etudiant e);
 
     Etudiant retrieveEtudiant(Long idEtudiant);
 

@@ -46,7 +46,6 @@ public class EtudiantServiceImpl implements EtudiantService {
     @Override
     public void removeEtudiant(Long idEtudiant) {
         Etudiant etudiant = etudiantRepository.findById(idEtudiant).orElseThrow(() -> new ResourceNotFoundException("Etudiant", "idEtudiant", idEtudiant));
-
 		etudiantRepository.delete(etudiant);
     }
 }

@@ -30,6 +30,6 @@ public class Equipe {
     @OneToOne
     private DetailEquipe detailEquipe;
     
-    @ManyToMany(mappedBy = "equipes", cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "equipes")
     private Set<Etudiant> etudiants;
 }
