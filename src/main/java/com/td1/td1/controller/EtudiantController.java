@@ -31,8 +31,9 @@ public class EtudiantController {
 	}
 
 	@PostMapping()
-	public Etudiant createEtudiant(@RequestBody Etudiant etudiant) {
-		return etudiantService.addEtudiant(etudiant);
+	public ResponseEntity<Etudiant> createEtudiant(@RequestBody Etudiant etudiant) {
+		 Etudiant createdEtudiant = etudiantService.addEtudiant(etudiant);
+		 return ResponseEntity.status(HttpStatus.CREATED).body(createdEtudiant);
 	}
 
 	@GetMapping("/{id}")

@@ -31,8 +31,9 @@ public class ContratController {
     }
 
     @PostMapping()
-    public Contrat createContrat(@RequestBody Contrat contrat) {
-        return contratService.addContrat(contrat);
+    public ResponseEntity<Contrat> createContrat(@RequestBody Contrat contrat) {
+        Contrat createdContrat = contratService.addContrat(contrat);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdContrat);
     }
 
     @GetMapping("/{id}")

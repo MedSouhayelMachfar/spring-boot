@@ -11,7 +11,7 @@
 	<groupId>com.td1</groupId>
 	<artifactId>td1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>td1</name>
+	<name>Kaddem</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

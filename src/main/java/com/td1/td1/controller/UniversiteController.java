@@ -3,6 +3,8 @@ package com.td1.td1.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,8 +31,9 @@ public class UniversiteController {
     }
 
     @PostMapping()
-    public Universite createUniversite(@RequestBody Universite Universite) {
-        return universiteService.addUniversite(Universite);
+    public ResponseEntity<Universite> createUniversite(@RequestBody Universite Universite) {
+        Universite createdUniversite = universiteService.addUniversite(Universite);
+		return ResponseEntity.status(HttpStatus.CREATED).body(createdUniversite);
     }
 
     @GetMapping("/{id}")
