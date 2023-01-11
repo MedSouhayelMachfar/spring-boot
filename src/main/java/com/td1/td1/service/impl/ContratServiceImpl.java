@@ -1,4 +1,4 @@
-package com.td1.td1.service;
+package com.td1.td1.service.impl;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.td1.td1.entity.Contrat;
 import com.td1.td1.exception.ResourceNotFoundException;
 import com.td1.td1.repository.ContratRepository;
+import com.td1.td1.service.ContratService;
 
 @Service
 public class ContratServiceImpl implements ContratService {

@@ -1,4 +1,4 @@
-package com.td1.td1.service;
+package com.td1.td1.service.impl;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.td1.td1.entity.Etudiant;
 import com.td1.td1.exception.ResourceNotFoundException;
 import com.td1.td1.repository.EtudiantRepository;
+import com.td1.td1.service.EtudiantService;
 
 @Service
 public class EtudiantServiceImpl implements EtudiantService {

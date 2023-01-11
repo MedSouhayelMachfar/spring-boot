@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.td1.td1.entity.Contrat;
 import com.td1.td1.service.ContratService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+@Tag(name = "Contrat")
 @RestController
 @RequestMapping("/api/v1/contrats")
 public class ContratController {

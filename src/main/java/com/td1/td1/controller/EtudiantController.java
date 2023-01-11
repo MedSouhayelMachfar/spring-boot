@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.td1.td1.entity.Etudiant;
 import com.td1.td1.service.EtudiantService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+@Tag(name = "Etudiant")
 @RestController
 @RequestMapping("/api/v1/etudiants")
 public class EtudiantController {
