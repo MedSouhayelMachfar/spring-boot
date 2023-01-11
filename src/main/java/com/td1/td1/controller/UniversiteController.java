@@ -16,7 +16,7 @@ import com.td1.td1.service.UniversiteService;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name = "Universites")
+@Tag(name = "Universite")
 @RestController
 @RequestMapping("/api/v1/universites")
 public class UniversiteController {
