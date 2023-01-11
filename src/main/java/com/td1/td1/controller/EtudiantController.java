@@ -15,36 +15,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.td1.td1.entity.Etudiant;
-import com.td1.td1.service.EtudiantServiceImpl;
+import com.td1.td1.service.EtudiantService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1/etudiants")
 public class EtudiantController {
 	@Autowired
-	EtudiantServiceImpl etudiantService;
+	EtudiantService etudiantService;
 
-	@GetMapping("/etudiants")
+	@GetMapping()
 	public List<Etudiant> getAllEtudiants() {
 		return etudiantService.retrieveAllEtudiants();
 	}
 
-	@PostMapping("/etudiants")
+	@PostMapping()
 	public Etudiant createEtudiant(@RequestBody Etudiant etudiant) {
 		return etudiantService.addEtudiant(etudiant);
 	}
 
-	@GetMapping("/etudiants/{id}")
+	@GetMapping("/{id}")
 	public Etudiant getEtudiantById(@PathVariable(value = "id") Long idEtudiant) {
 		return etudiantService.retrieveEtudiant(idEtudiant);
 	}
 
-	@PutMapping("/etudiants/{id}")
+	@PutMapping("/{id}")
 	public Etudiant updateEtudiant(@PathVariable(value = "id") Long idEtudiant, @RequestBody Etudiant etudiantDetails) {
 		Etudiant updatedEtudiant = etudiantService.updateEtudiant(idEtudiant, etudiantDetails);
 		return updatedEtudiant;
 	}
 
-	@DeleteMapping("/etudiants/{id}")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<HttpStatus> deleteEtudiant(@PathVariable(value = "id") Long idEtudiant) {
 		etudiantService.removeEtudiant(idEtudiant);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
