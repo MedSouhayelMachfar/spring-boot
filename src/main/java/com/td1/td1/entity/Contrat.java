@@ -3,6 +3,8 @@ package com.td1.td1.entity;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,6 +28,7 @@ public class Contrat {
     private Date dateDebutContrat;
     @Temporal(TemporalType.DATE)
     private Date dateFinContrat;
+    @Enumerated(EnumType.STRING)
     private Specialite specialite;
     private Boolean archive;
     private Integer montantContrat;
