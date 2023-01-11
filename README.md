@@ -24,22 +24,33 @@ Find Application.java from side bar, right click on the file, select 'Run As' > 
 
 ## Postman tests
 
-> Creating a resource
+```sh
+Creating a resource
+```
 
 ![Creating a resource](https://github.com/MedSouhayelMachfar/spring-boot/blob/master/screenshots/create-resource.png?raw=true)
 
-> Retreive a resource
+
+```sh
+Retreive a resource
+```
 
 ![Creating a resource](https://github.com/MedSouhayelMachfar/spring-boot/blob/master/screenshots/get-one-resource.png?raw=true)
 
-> Retreive all resources
+```sh
+Retreive all resources
+```
 
 ![Creating a resource](https://github.com/MedSouhayelMachfar/spring-boot/blob/master/screenshots/get-all-resource.png?raw=true)
 
-> Update a resource
+```sh
+Update a resource
+```
 
 ![Creating a resource](https://github.com/MedSouhayelMachfar/spring-boot/blob/master/screenshots/update-resource.png?raw=true)
 
-> Delete a resource
+```sh
+Delete a resource
+```
 
 ![Creating a resource](https://github.com/MedSouhayelMachfar/spring-boot/blob/master/screenshots/delete-resource.png?raw=true)
