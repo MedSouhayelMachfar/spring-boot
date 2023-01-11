@@ -5,6 +5,8 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,6 +27,7 @@ public class Equipe {
     @Column(name = "idEquipe")
     private Long idEquipe;
     private String nomEquipe;
+    @Enumerated(EnumType.STRING)
     private Niveau niveau;
 
     @OneToOne

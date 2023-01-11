@@ -29,8 +29,8 @@ public class EquipeController {
     }
 
     @PostMapping()
-    public Equipe createEquipe(@RequestBody Equipe Equipe) {
-        return equipeService.addEquipe(Equipe);
+    public Equipe createEquipe(@RequestBody Equipe equipe) {
+        return equipeService.addEquipe(equipe);
     }
 
     @GetMapping("/{id}")
@@ -39,8 +39,8 @@ public class EquipeController {
 	}
 
 	@PutMapping("/{id}")
-	public Equipe updateEquipe(@PathVariable(value = "id") Long idEquipe, @RequestBody Equipe EquipeDetails) {
-		Equipe updatedEquipe = equipeService.updateEquipe(idEquipe, EquipeDetails);
+	public Equipe updateEquipe(@PathVariable(value = "id") Long idEquipe, @RequestBody Equipe equipeDetails) {
+		Equipe updatedEquipe = equipeService.updateEquipe(idEquipe, equipeDetails);
 		return updatedEquipe;
 	}
 }

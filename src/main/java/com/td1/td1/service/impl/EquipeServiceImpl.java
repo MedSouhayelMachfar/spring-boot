@@ -22,8 +22,7 @@ public class EquipeServiceImpl implements EquipeService{
 
     @Override
     public Equipe addEquipe(Equipe e) {
-        // TODO Auto-generated method stub
-        return null;
+        return equipeRepository.save(e);
     }
 
     @Override

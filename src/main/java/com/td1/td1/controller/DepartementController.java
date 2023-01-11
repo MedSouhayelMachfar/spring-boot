@@ -39,8 +39,8 @@ public class DepartementController {
 	}
 
 	@PutMapping("/{id}")
-	public Departement updateDepartement(@PathVariable(value = "id") Long idDepartement, @RequestBody Departement DepartementDetails) {
-		Departement updatedDepartement = departementService.updateDepartement(idDepartement, DepartementDetails);
+	public Departement updateDepartement(@PathVariable(value = "id") Long idDepartement, @RequestBody Departement departementDetails) {
+		Departement updatedDepartement = departementService.updateDepartement(idDepartement, departementDetails);
 		return updatedDepartement;
 	}
 }

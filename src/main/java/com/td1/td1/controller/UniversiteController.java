@@ -39,8 +39,8 @@ public class UniversiteController {
 	}
 
 	@PutMapping("/{id}")
-	public Universite updateUniversite(@PathVariable(value = "id") Long idUniversite, @RequestBody Universite UniversiteDetails) {
-		Universite updatedUniversite = universiteService.updateUniversite(idUniversite, UniversiteDetails);
+	public Universite updateUniversite(@PathVariable(value = "id") Long idUniversite, @RequestBody Universite universiteDetails) {
+		Universite updatedUniversite = universiteService.updateUniversite(idUniversite, universiteDetails);
 		return updatedUniversite;
 	}
 }
