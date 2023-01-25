@@ -1,11 +1,14 @@
 package com.td1.td1.entity;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -23,5 +26,8 @@ public class Departement {
     private String nomDepart;
 
     @ManyToOne
-    Universite universite;
+    private Universite universite;
+
+    @OneToMany()
+    private Set<Etudiant> etudiants;
 }

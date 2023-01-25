@@ -12,4 +12,8 @@ public interface DepartementService {
     Departement updateDepartement(Long idDepart, Departement d);
 
     Departement retrieveDepartement(Long idDepart);
+
+    void assignEtudiantToDepartement (Long etudiantId, Long departementId);
+
+    void assignUniversiteToDepartement(Long idUniversite, Long idDepartement);
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.td1.td1.entity.Etudiant;
+import com.td1.td1.entity.Option;
 import com.td1.td1.exception.ResourceNotFoundException;
 import com.td1.td1.repository.EtudiantRepository;
 import com.td1.td1.service.EtudiantService;
@@ -48,5 +49,10 @@ public class EtudiantServiceImpl implements EtudiantService {
     public void removeEtudiant(Long idEtudiant) {
         Etudiant etudiant = etudiantRepository.findById(idEtudiant).orElseThrow(() -> new ResourceNotFoundException("Etudiant", "idEtudiant", idEtudiant));
 		etudiantRepository.delete(etudiant);
+    }
+
+    @Override
+    public List<Etudiant> findByOp(Option op) {
+        return etudiantRepository.findByOpLike(op);
     }
 }

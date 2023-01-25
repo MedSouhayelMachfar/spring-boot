@@ -41,5 +41,11 @@ public class EquipeServiceImpl implements EquipeService{
     public Equipe retrieveEquipe(Long idEquipe) {
         return equipeRepository.findById(idEquipe).orElseThrow(() -> new ResourceNotFoundException("Equipe", "idEquipe", idEquipe));
     }
+
+    @Override
+    public void removeEquipe(Long idEquipe) {
+        Equipe equipe = equipeRepository.findById(idEquipe).orElseThrow(() -> new ResourceNotFoundException("equipe", "idEquipe", idEquipe));
+        equipeRepository.delete(equipe);
+    }
     
 }

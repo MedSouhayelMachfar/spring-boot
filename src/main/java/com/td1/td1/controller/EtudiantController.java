@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.td1.td1.entity.Etudiant;
+import com.td1.td1.entity.Option;
 import com.td1.td1.service.EtudiantService;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -26,7 +28,10 @@ public class EtudiantController {
 	EtudiantService etudiantService;
 
 	@GetMapping()
-	public List<Etudiant> getAllEtudiants() {
+	public List<Etudiant> getAllEtudiants(@RequestParam(required = false) Option op) {
+		if(op != null) {
+			return etudiantService.findByOp(op);
+		}
 		return etudiantService.retrieveAllEtudiants();
 	}
 

@@ -10,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -30,7 +31,8 @@ public class Equipe {
     @Enumerated(EnumType.STRING)
     private Niveau niveau;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idDetailEquipe")
     private DetailEquipe detailEquipe;
     
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "equipes")

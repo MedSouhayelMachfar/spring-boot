@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.td1.td1.entity.Departement;
@@ -46,4 +47,28 @@ public class DepartementController {
 		Departement updatedDepartement = departementService.updateDepartement(idDepartement, departementDetails);
 		return updatedDepartement;
 	}
+
+    @PostMapping(value="/assignEtudiantToDepartement")
+    public ResponseEntity<HttpStatus> assignEtudiantToDepartement(@RequestBody  AssignEtudiantToDepartementBody payload) {
+        System.out.println(payload);
+        departementService.assignEtudiantToDepartement(payload.etudiantId, payload.departementId);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    
+    @PostMapping(value = "/assignUniversiteToDepartement")
+    public ResponseEntity<HttpStatus> assignUniversiteToDepartement(@RequestBody  AssignUniversiteToDepartementBody payload) {
+        System.out.println(payload);
+        departementService.assignUniversiteToDepartement(payload.idUniversite, payload.departementId);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+}
+// Types
+class AssignEtudiantToDepartementBody {
+    Long etudiantId;
+    Long departementId; 
+}
+
+class AssignUniversiteToDepartementBody {
+    Long idUniversite;
+    Long departementId; 
 }
